@@ -1,13 +1,6 @@
 {{ define "main" }}
 
-<h1>Sobre mim</h1>
-
-<p>
-Esta página está em construção. <a href="sobre-mim/">(mais)</a>
-</p>
-<br/>
-
-<h1>Últimos posts</h1>
+<h1>últimos posts</h1>
 
 <div class="posts-list">
 {{ with .Site.GetPage "/posts" }}
@@ -23,10 +16,10 @@ Esta página está em construção. <a href="sobre-mim/">(mais)</a>
 {{ end }}
 </div>
 
-<h1>Recentemente...</h1>
+<h1>gosto e recomendo</h1>
 
 <div class="image-grid">
-{{ with .Site.GetPage "/recentemente" }}
+{{ with .Site.GetPage "/gosto-e-recomendo" }}
     {{ range first 3 (sort .Data.Pages "Date" "desc")}}
         <a href="{{ .Permalink }}" title="{{ .Title }}">
         {{ $image := .Page.Resources.GetMatch .Params.image }}
