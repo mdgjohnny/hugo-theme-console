@@ -172,10 +172,18 @@ figure {
     display: grid;
     grid-template-rows: auto;
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 1.5em;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit,
             minmax(calc(var(--page-width) / 4), 1fr));
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    object-fit: cover;
+}
+
+/* Add hover effect */
+.image-grid a:hover img {
+    transform: scale(1.005); /* Zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.02); /* Shadow effect on hover */
 }
 
 .terminal-prompt::after {
@@ -189,6 +197,7 @@ figure {
 }
 
 .gallery-image {
+    
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -218,7 +227,7 @@ figure {
     .site-name {
         width: 2ch;
         overflow: hidden;
-        display: inline-block;
+        display: inline;
     }
 
     .terminal-nav {
